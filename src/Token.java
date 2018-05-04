@@ -3,8 +3,8 @@
 //04/5/2018
 //PHASE 2
 public class Token {
-	public TokenType type;
-    public String data;
+	public TokenType type;//enum
+    public String data;//
     public Token(TokenType type, String data) {
       this.type = type;
       this.data = data;

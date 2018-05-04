@@ -194,9 +194,10 @@ public class Parser {
 			assert(currToken.data.equals(")"));
 			consumeToken();
 			return tree;
-		} else
-			return null;
-	}
+		} else {
+			System.out.println("Runtime error");
+			return null;}
+	} 
 	
 	//iterates 0 or 1
 	public ParseTree parse_boolexpression() {
@@ -272,13 +273,14 @@ public class Parser {
 					templist.add(parse_numexpression());
 					tree = new ParseTree(root,templist);
 				}
-			} else {
+			} 
+			else {
 				if(currToken.type==TokenType.BOOL ||currToken.type==TokenType.IDENTIFIER) {
 					tree = new ParseTree(currToken,null); //leaf node no children
 					consumeToken();
-				} else {
+				} 
+				else
 					tree = null;
-				}
 			}
 		}
 		return tree;

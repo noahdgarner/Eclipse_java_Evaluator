@@ -14,7 +14,7 @@ public class Main {
 	    Lexer lexer = new Lexer();
 	    ArrayList<Token> tokens = new ArrayList<Token>();
 	    try { 
-	    	System.out.println("Scanner");
+	    	System.out.println("Scanner\nTokens:");
 	        FileReader fileReader = new FileReader(args[0]);
 	        BufferedReader bufferedReader = new BufferedReader(fileReader);
 	        while((line = bufferedReader.readLine()) != null) {	
@@ -36,16 +36,15 @@ public class Main {
 	    
 	    for(Token token : tokens) {
 	    	if(token.type==TokenType.ERROR) {
-		    	System.out.println("Error, something went wrong.");
+		    	System.out.println("Error, something went wrong: Scanner");
 		    	System.exit(0);
 		    }
 	    }
-	    System.out.println("\nParser");
+	    System.out.println("\nParser\nAST:");
 	    Parser parser = new Parser(tokens);
 	    ParseTree pt = parser.parse();
 	    pt.print(0);
 	    System.out.println("\nEvaluator");
 	    new Evaluator(pt);
-
 	 }
 }

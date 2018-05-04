@@ -5,7 +5,6 @@
 import java.util.ArrayList;
 
 public class ParseTree {
-	
 	private static final String TAB = "        ";
 	Token root;
 	ArrayList<ParseTree> children;
@@ -13,7 +12,6 @@ public class ParseTree {
 		root = r;
 		children = p;
 	}
-	
 	public void print(int numTabs) {
 		for(int i=0;i<numTabs;i++)
 			System.out.print(TAB);
