@@ -1,0 +1,30 @@
+x := 40;
+y := 5;
+z := true;
+
+
+
+while (z) do
+	y := y + 1;
+	x := 20 / 2;
+	z := true;
+	if (y == 7)
+	then 
+	x := 0;
+	skip
+	else 
+	y := 0;
+	skip
+	endif
+endwhile
+
+
+
+
+
+
+
+
+
+
+
